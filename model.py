@@ -24,3 +24,16 @@ class Add( tk.Frame ):
 
 
 
+
+
+
+
+
+
+win = tk.Tk() 
+win.geometry ("1000x800+300+150")
+win.title( " Flower shopping " )
+win.config( bg ="#FFEFD5")
+flower1 = Add( win )
+flower1.grid ( row = 1 , column = 1 )
+win.mainloop()
