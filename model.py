@@ -1,9 +1,7 @@
 import tkinter as tk 
 
 flower_List = [ "Rose" , "Lily" , "Lotus" , "Daisy" , "Jasmin" , "Sunflower" , "Marigold" , "Orchid" , "Blueble" , "Dahlia" ]
-
-exist_Flower = [ "Rose" , "Sunflower" , "Daisy" , "Lotus" , "Marigold" ]
-
+exist_Flower = [ "Rose" , "Sunflower" , "Daisy" , "Marigold" ]
 new = []
 
 class Edit():
@@ -34,6 +32,28 @@ class Add( tk.Frame ):
         
         self.fr_lbl = tk.Frame( self , bd = 1 , relief = "solid" , padx = 100 , bg = "#DCDCDC" , width = 300 , height = 400  )
         self.fr_lbl.grid( row = 0 , column = 1 )
+
+        def get_entry( event ):
+            value  = entry_add.get();
+            str( value )
+            if value.capitalize() in new:
+                exist_Flower.append( value.capitalize() ) 
+                new.remove( value.capitalize() )
+                entry_add.delete( 0 , "end")
+                print( new )
+                print ( exist_Flower )
+            else :
+                self.lbl_message = tk.Label( self.fr_lbl , text = " this flower is not in list " )
+                
+
+        
+        self.lbl_add = tk.Label ( self.fr_lbl , text = " Please enter the name of flower : " , bg = "white")
+        self.lbl_add.grid ( row = 0 , column = 0  , sticky = "w" )
+        entry_add = self.ent_add = tk.Entry (self.fr_lbl)
+        entry_add.grid( row = 0 , column = 1)
+        entry_add.delete( 0 , "end")
+        entry_add.bind ( "<Return>" , get_entry )
+
 
 
 
