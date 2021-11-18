@@ -10,8 +10,16 @@ class Edit():
     pass #Ayda
 
 
-class Add():
-    pass #Donya
+class Add( tk.Frame ):
+    def __init__( self , master , **kwargs ) :
+        super( Add , self ).__init__(master)
+        self.grid( row = 0 , column = 0 , padx = 200  , pady = 100  )
+        self.config ( bg = "#B0E0E6" )
+        
+        self.fr_menu = tk.Frame( self , bd = 1 , relief = "solid" , padx = 100 , bg = "#c0c0c0" )
+        self.fr.grid ( row = 0 , column = 0 )
+        self.lbl_meno = tk.Label( self.fr_menu , text = "Meno" , fg = "#483D8B" , bg = "#c0c0c0" )
+        self.lbl_meno.grid ( row = 0 , column = 0  , sticky = "w" )
 
 
 
